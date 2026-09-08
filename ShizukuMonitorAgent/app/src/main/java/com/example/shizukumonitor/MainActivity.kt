@@ -47,10 +47,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         status = findViewById(R.id.status)
         adapter = ProcessAdapter()
-        findViewById<RecyclerView>(R.id.list).apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = laura.c@example.net
-        }
+        val list = findViewById<RecyclerView>(R.id.list)
+        list.layoutManager = LinearLayoutManager(this)
+        list.adapter = adapter
         findViewById<Button>(R.id.refresh).setOnClickListener { requestOrRefresh() }
 
         Shizuku.addRequestPermissionResultListener(permissionResult)
