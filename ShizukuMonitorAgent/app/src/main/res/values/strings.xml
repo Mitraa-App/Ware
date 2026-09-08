@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shizuku Monitor</string>
+    <string name="refresh">Grant / refresh</string>
+    <string name="status_no_shizuku">Shizuku is not running</string>
+    <string name="status_need_permission">Tap to grant Shizuku permission</string>
+    <string name="status_ready">Shizuku ready</string>
+    <string name="status_bound">User service bound</string>
+    <string name="status_disconnected">User service dropped</string>
+    <string name="status_count">%d processes</string>
+</resources>
