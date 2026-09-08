@@ -1,0 +1,42 @@
+name: Android APK
+
+on:
+  push:
+    branches: [main, fix/buildable]
+    paths:
+      - "ShizukuMonitorAgent/**"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: android-actions/setup-android@v3
+      - name: Generate Gradle wrapper
+        working-directory: ShizukuMonitorAgent
+        run: |
+          gradle wrapper --gradle-version 8.2 || true
+          if [ ! -f gradlew ]; then
+            curl -fsSL -o /tmp/gradle.zip https://services.gradle.org/distributions/gradle-8.2-bin.zip
+            python3 - <<'PY'
+import zipfile, os, stat, pathlib
+z=zipfile.ZipFile('/tmp/gradle.zip')
+z.extractall('/tmp/gradle-dist')
+print('extracted')
+PY
+            /tmp/gradle-dist/gradle-8.2/bin/gradle wrapper --gradle-version 8.2
+          fi
+          chmod +x gradlew
+      - name: Assemble debug APK
+        working-directory: ShizukuMonitorAgent
+        run: ./gradlew assembleDebug --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ware-monitor-debug
+          path: ShizukuMonitorAgent/app/build/outputs/apk/debug/*.apk
