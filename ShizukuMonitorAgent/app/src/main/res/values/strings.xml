@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Shizuku Monitor</string>
-    <string name="refresh">Grant / refresh</string>
-    <string name="status_no_shizuku">Shizuku is not running</string>
-    <string name="status_need_permission">Tap to grant Shizuku permission</string>
-    <string name="status_ready">Shizuku ready</string>
-    <string name="status_bound">User service bound</string>
-    <string name="status_disconnected">User service dropped</string>
-    <string name="status_count">%d processes</string>
+    <string name="app_name">WARE</string>
+    <string name="tagline">This phone</string>
+    <string name="shizuku_title">Access</string>
+    <string name="shizuku_body">WARE uses Shizuku so the console can administer this phone: screen, apps, files, processes, logs, and shell.</string>
+    <string name="admin_notice">Connecting grants the console full admin of this handset until you disconnect.</string>
+    <string name="grant_access">Grant access</string>
+    <string name="open_shizuku">Open Shizuku</string>
+    <string name="pair_title">Console</string>
+    <string name="pair_body">Paste the address and pairing code shown on the WARE console.</string>
+    <string name="hint_url">Console address</string>
+    <string name="hint_code">Pairing code</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="processes">Processes</string>
+    <string name="status_no_shizuku">Shizuku is not running. Install it, start it, then tap Grant access.</string>
+    <string name="status_need_permission">Tap Grant access and approve the Shizuku prompt.</string>
+    <string name="status_ready">Shizuku is granted. Connect to the console next.</string>
+    <string name="status_bound">Admin helper is bound.</string>
+    <string name="status_disconnected">Shizuku dropped. Grant access again.</string>
+    <string name="status_count">%d processes on this phone</string>
+    <string name="status_sending">Sending to console…</string>
+    <string name="status_sent">Console has this phone · %d processes</string>
+    <string name="status_pair_fail">Could not reach the console. Check the address and that the site is public.</string>
+    <string name="status_need_pair">Enter the console address and pairing code.</string>
 </resources>

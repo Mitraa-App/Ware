@@ -24,7 +24,7 @@ class ProcessAdapter : RecyclerView.Adapter<ProcessAdapter.Holder>() {
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val item = items[position]
         holder.title.text = item.name
-        holder.meta.text = "pid ${item.pid}  ppid ${item.ppid}  ${item.user}  ${"%.1f".format(item.memoryMB)} MB"
+        holder.meta.text = "pid ${item.pid}  ${item.user}  ${"%.1f".format(item.memoryMB)} MB"
     }
 
     override fun getItemCount(): Int = items.size

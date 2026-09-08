@@ -3,18 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp">
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold" />
+        android:fontFamily="monospace"
+        android:textColor="@color/ware_fg"
+        android:textSize="13sp" />
 
     <TextView
         android:id="@+id/meta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/ware_subtle"
         android:textSize="12sp" />
 </LinearLayout>

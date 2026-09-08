@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ware_bg">#FF0A0A0B</color>
+    <color name="ware_surface">#FF121214</color>
+    <color name="ware_elevated">#FF1A1A1E</color>
+    <color name="ware_fg">#FFF4F4F5</color>
+    <color name="ware_muted">#FFA1A1AA</color>
+    <color name="ware_subtle">#FF71717A</color>
+    <color name="ware_accent">#FFD7DBE3</color>
+    <color name="ware_ok">#FF7D9A86</color>
+    <color name="ware_stroke">#26F4F4F5</color>
+</resources>

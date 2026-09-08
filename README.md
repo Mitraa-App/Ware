@@ -1,26 +1,31 @@
-# Ware
+# WARE
 
-Local coding agent + incomplete Android Shizuku process viewer.
+Owner-operated phone console. Install the companion on a handset you unlock, grant Shizuku, pair with a code, then administer that phone from the web console.
 
-This dump was not buildable. `fix/buildable` restores the missing Gradle module files, wires the Python agent to a real localhost proxy, and jails file APIs to the workspace.
+## Companion APK
 
-## Python agent
+Source: `ShizukuMonitorAgent/`
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-export DEEPSEEK_API_KEY=sk-...
-python proxy.py          # :8000 health + chat completions
-# other terminal
-python agent.py          # REPL
-python app.py            # optional file API on 127.0.0.1:5000
-```
+On the phone:
 
-File read/write/delete stays inside `WARE_WORKSPACE` (defaults to cwd). The Flask API binds localhost only.
+1. Install [Shizuku](https://shizuku.rikka.app/) and start it.
+2. Install the WARE APK (unsigned debug build; allow unknown sources).
+3. Open WARE → Grant access → paste the console address and pairing code → Connect.
+4. Keep WARE in the foreground while you use the console.
 
-## Android (`ShizukuMonitorAgent`)
+The phone sends screen, apps, files, processes, logs, and shell to **that pairing code only**. Disconnect on the phone to cut the link.
 
-Open the folder in Android Studio. Requires [Shizuku](https://shizuku.rikka.app/) running on the device. The app lists processes via a Shizuku user service after you grant permission. Local viewer only — no network exfil.
+## Console
 
-Missing from the original upload: `settings.gradle`, `app/build.gradle`, manifest, activities, layouts, themes, and non-empty launcher resources.
+Source: `console/`
+
+Pairing-code scoped device admin:
+
+- Overview, live screen, apps, files, processes, logs, shell
+- Stop / uninstall / run commands are queued for the next sample from the phone
+
+## Local agent (Python)
+
+`agent.py` + `proxy.py` — original coding-agent helpers. `pip install -r requirements.txt`.
+
+This is not spyware. The app is visible, access is granted on the device, and nothing is hidden.

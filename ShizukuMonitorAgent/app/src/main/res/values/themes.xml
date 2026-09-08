@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.ShizukuMonitor" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.ShizukuMonitor" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:statusBarColor">@color/ware_bg</item>
+        <item name="android:navigationBarColor">@color/ware_bg</item>
+        <item name="android:windowBackground">@color/ware_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorPrimary">@color/ware_accent</item>
+        <item name="colorOnPrimary">@color/ware_bg</item>
+        <item name="colorSurface">@color/ware_surface</item>
+        <item name="colorOnSurface">@color/ware_fg</item>
+        <item name="android:textColorPrimary">@color/ware_fg</item>
+        <item name="android:textColorSecondary">@color/ware_muted</item>
+        <item name="materialButtonStyle">@style/Widget.WARE.Button</item>
+    </style>
+
+    <style name="Widget.WARE.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="backgroundTint">@color/ware_accent</item>
+        <item name="android:textColor">@color/ware_bg</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
 </resources>
